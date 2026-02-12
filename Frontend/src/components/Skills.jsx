@@ -257,7 +257,7 @@ const Skills = () => {
             >
               Skills & Expertise
             </motion.span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-white">Technologies I </span>
               <span className="text-gradient">Work With</span>
             </h2>
@@ -282,12 +282,12 @@ const Skills = () => {
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 ${activeCategory === index
+                  className={`px-3 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-base font-semibold transition-all duration-300 flex items-center gap-2 md:gap-3 ${activeCategory === index
                     ? `bg-gradient-to-r ${category.gradient} text-white shadow-neon-holographic`
                     : 'glass text-golden-green hover:text-gold border border-golden-green/30 hover:border-gold/50'
                     }`}
                 >
-                  <IconComponent size={20} />
+                  <IconComponent size={20} className="w-4 h-4 md:w-5 md:h-5" />
                   {category.title}
                 </motion.button>
               )
@@ -310,7 +310,7 @@ const Skills = () => {
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 p-3 rounded-full glass-gold border border-gold/40 hover:border-gold/60 transition-all shadow-neon-gold hover:scale-110"
               aria-label="Previous category"
             >
-              <ChevronLeft size={24} className="text-gold" />
+              <ChevronLeft size={24} className="text-gold w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={() => {
@@ -318,10 +318,10 @@ const Skills = () => {
                 setIsPaused(true)
                 setTimeout(() => setIsPaused(false), 5000) // Resume after 5 seconds
               }}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 p-3 rounded-full glass-gold border border-gold/40 hover:border-gold/60 transition-all shadow-neon-gold hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 p-2 md:p-3 rounded-full glass-gold border border-gold/40 hover:border-gold/60 transition-all shadow-neon-gold hover:scale-110"
               aria-label="Next category"
             >
-              <ChevronRight size={24} className="text-gold" />
+              <ChevronRight size={24} className="text-gold w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Carousel */}
@@ -344,7 +344,7 @@ const Skills = () => {
                         opacity: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
                         scale: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
                       }}
-                      className={`relative glass-holographic rounded-3xl p-8 md:p-12 border border-golden-green/40 shadow-neon-holographic overflow-hidden`}
+                      className={`relative glass-holographic rounded-3xl p-4 md:p-12 border border-golden-green/40 shadow-neon-holographic overflow-hidden`}
                     >
                       {/* Animated Background Gradient */}
                       <motion.div
@@ -384,25 +384,25 @@ const Skills = () => {
 
                       {/* Category Header */}
                       <div className="relative z-10 mb-10">
-                        <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-center gap-2 md:gap-4 mb-6">
                           <motion.div
                             whileHover={{ scale: 1.2, rotate: 360 }}
                             transition={{ duration: 0.5 }}
-                            className={`p-5 rounded-2xl bg-gradient-to-br ${category.gradient} shadow-neon-gold`}
+                            className={`p-3 md:p-5 rounded-2xl bg-gradient-to-br ${category.gradient} shadow-neon-gold`}
                           >
-                            <IconComponent size={32} className="text-white" />
+                            <IconComponent size={24} className="text-white w-5 h-5 md:w-8 md:h-8" />
                           </motion.div>
                           <div>
-                            <h3 className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent mb-2`}>
+                            <h3 className={`text-2xl md:text-5xl font-bold bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent mb-2`}>
                               {category.title}
                             </h3>
-                            <div className={`h-1.5 w-32 bg-gradient-to-r ${category.gradient} rounded-full shadow-neon-golden-green`} />
+                            <div className={`h-1.5 w-20 md:w-32 bg-gradient-to-r ${category.gradient} rounded-full shadow-neon-golden-green`} />
                           </div>
                         </div>
                       </div>
 
                       {/* Skills Grid */}
-                      <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                      <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6">
                         {category.skills.map((skill, skillIndex) => {
                           const logoUrl = getTechLogo(skill.name)
                           return (
@@ -426,7 +426,7 @@ const Skills = () => {
                               className="relative group/item"
                             >
                               {/* Skill Card */}
-                              <div className={`relative glass rounded-2xl p-6 border border-golden-green/30 hover:border-gold/60 transition-all shadow-neon-golden-green overflow-hidden h-full flex flex-col items-center text-center`}>
+                              <div className={`relative glass rounded-2xl p-3 md:p-6 border border-golden-green/30 hover:border-gold/60 transition-all shadow-neon-golden-green overflow-hidden h-full flex flex-col items-center text-center`}>
                                 {/* Hover Gradient Overlay */}
                                 <motion.div
                                   className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} opacity-0 group-hover/item:opacity-100 transition-opacity duration-300`}
@@ -441,12 +441,12 @@ const Skills = () => {
                                         rotate: hoveredSkill === `${categoryIndex}-${skillIndex}` ? [0, -15, 15, -15, 0] : 0,
                                       }}
                                       transition={{ duration: 0.6 }}
-                                      className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-golden-green/20 group-hover/item:border-gold/40 transition-all mb-3"
+                                      className="p-2 md:p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-golden-green/20 group-hover/item:border-gold/40 transition-all mb-3 w-12 h-12 md:w-full md:h-auto flex items-center justify-center mx-auto"
                                     >
                                       <img
                                         src={logoUrl}
                                         alt={skill.name}
-                                        className="w-16 h-16 object-contain mx-auto"
+                                        className="w-8 h-8 md:w-16 md:h-16 object-contain"
                                         style={{
                                           filter: hoveredSkill === `${categoryIndex}-${skillIndex}`
                                             ? 'drop-shadow(0 0 15px rgba(184, 233, 148, 0.9)) brightness(1.3)'
@@ -462,15 +462,15 @@ const Skills = () => {
                                       animate={{
                                         scale: hoveredSkill === `${categoryIndex}-${skillIndex}` ? 1.2 : 1,
                                       }}
-                                      className="w-16 h-16 rounded-xl bg-gradient-to-br from-golden-green to-teal-gold flex items-center justify-center mb-3 mx-auto"
+                                      className="w-10 h-10 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-golden-green to-teal-gold flex items-center justify-center mb-3 mx-auto"
                                     >
-                                      <Code size={32} className="text-white" />
+                                      <Code size={20} className="text-white w-5 h-5 md:w-8 md:h-8" />
                                     </motion.div>
                                   )}
                                 </div>
 
                                 {/* Skill Name */}
-                                <h4 className="text-white font-bold text-lg mb-3 relative z-10">
+                                <h4 className="text-white font-bold text-sm md:text-lg mb-3 relative z-10 w-full truncate">
                                   {skill.name}
                                 </h4>
 
@@ -504,7 +504,7 @@ const Skills = () => {
                                       type: 'spring',
                                       stiffness: 200,
                                     }}
-                                    className={`text-lg font-bold bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent block`}
+                                    className={`text-sm md:text-lg font-bold bg-gradient-to-r ${category.gradient} bg-clip-text text-transparent block`}
                                   >
                                     {skill.level}%
                                   </motion.span>

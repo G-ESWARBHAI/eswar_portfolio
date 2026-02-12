@@ -168,7 +168,7 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.5, delay: index * 0.08 }}
-        className={`relative cursor-pointer glass-holographic overflow-hidden border border-golden-green/40 shadow-neon-holographic bg-bg-dark/60 group rounded-3xl ${isSelected ? 'col-span-1 lg:col-span-3 min-h-[600px] z-20' : 'col-span-1 lg:col-span-3 lg:h-[420px]'
+        className={`relative glass-holographic overflow-hidden border border-golden-green/40 shadow-neon-holographic bg-bg-dark/60 group rounded-3xl ${isSelected ? 'col-span-1 lg:col-span-3 min-h-[600px] z-20 cursor-default' : 'col-span-1 lg:col-span-3 lg:h-[420px] cursor-pointer'
           }`}
       >
         {/* Gradient Background with very soft parallax */}
@@ -340,7 +340,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                <div className="mt-4 flex flex-col sm:flex-row gap-3 relative z-50">
                   <a
                     href={project.liveUrl}
                     target="_blank"
