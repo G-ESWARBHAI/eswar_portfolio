@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Download, Mail } from 'lucide-react'
-import eswarProf from '../assets/eswar_prof.png'
+import eswarProf from '../assets/eswar_profile_clg.jpeg'
+import resume from '../assets/resume.pdf'
 import Tilt from 'react-parallax-tilt'
 
 const Hero = () => {
@@ -168,9 +169,14 @@ const Hero = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight"
             >
               <span className="text-white">Hi, I'm </span>
-              <span className="text-gradient">Developer</span>
+              <span className="text-gradient">ESWAR</span>
               <br />
-              <span className="text-gradient-gold">Full Stack Engineer</span>
+              <div className="my-3 md:my-4">
+                <span className="inline-block px-4 py-1.5 rounded-full border border-golden-green/40 bg-golden-green/10 text-golden-green text-sm md:text-xl font-medium tracking-wider shadow-neon-golden-green">
+                  Backend-Focused
+                </span>
+              </div>
+              <span className="text-gradient-gold">Full Stack Developer</span>
             </motion.h1>
 
             {/* Mobile Profile Image (Visible only on mobile/tablet) */}
@@ -185,9 +191,8 @@ const Hero = () => {
               variants={itemVariants}
               className="text-base sm:text-lg md:text-xl text-golden-green/90 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-4 lg:px-0"
             >
-              I craft beautiful, functional, and scalable web applications
-              using modern technologies. Passionate about creating exceptional
-              digital experiences.
+              I build scalable web and mobile applications using React, React Native,
+              and Node.js — with a strong focus on backend architecture and performance.
             </motion.p>
 
             <motion.div
@@ -203,14 +208,16 @@ const Hero = () => {
                 <Mail size={18} className="group-hover:rotate-12 transition-transform md:w-5 md:h-5" />
                 Get In Touch
               </motion.button>
-              <motion.button
+              <motion.a
+                href={resume}
+                download="Eswar_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 md:px-8 md:py-4 rounded-xl glass border border-golden-green/50 text-white font-semibold hover:bg-golden-green/10 hover:border-gold hover:shadow-neon-golden-green transition-all duration-300 flex items-center justify-center gap-2 group text-sm md:text-base"
+                className="px-6 py-3 md:px-8 md:py-4 rounded-xl glass border border-golden-green/50 text-white font-semibold hover:bg-golden-green/10 hover:border-gold hover:shadow-neon-golden-green transition-all duration-300 flex items-center justify-center gap-2 group text-sm md:text-base cursor-pointer"
               >
                 <Download size={18} className="group-hover:translate-y-1 transition-transform md:w-5 md:h-5" />
                 Download CV
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Stats */}
@@ -219,9 +226,9 @@ const Hero = () => {
               className="mt-8 md:mt-12 grid grid-cols-3 gap-4 md:gap-6 max-w-md mx-auto lg:mx-0"
             >
               {[
-                { number: '50+', label: 'Projects' },
-                { number: '3+', label: 'Years' },
-                { number: '100%', label: 'Dedicated' },
+                { number: '3+', label: 'Major Projects' },
+                { number: '50+', label: 'APIs Built' },
+                { number: '100%', label: 'Performance' },
               ].map((stat, index) => (
                 <motion.div
                   key={index}

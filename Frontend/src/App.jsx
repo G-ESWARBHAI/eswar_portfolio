@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import TechMarquee from './components/TechMarquee'
 
 function App() {
   useEffect(() => {
@@ -53,6 +54,7 @@ function App() {
     <div className="w-full bg-bg-dark min-h-screen">
       <Navbar />
       <Hero />
+      <TechMarquee />
       <About />
       <Skills />
       <Projects />

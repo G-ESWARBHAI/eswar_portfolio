@@ -59,19 +59,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      link: 'mailto:your.email@example.com',
+      value: 'eswargeddam2004@gmail.com',
+      link: 'mailto:eswargeddam2004@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+91 8074446902',
+      link: 'tel:+918074446902',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'New York, USA',
+      value: 'Hyderabad, Telangana, India',
       link: '#',
     },
   ]
@@ -88,7 +88,7 @@ const Contact = () => {
       ref={ref}
       className="py-20 md:py-32 relative"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"

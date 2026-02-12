@@ -12,26 +12,111 @@ const Skills = () => {
 
   // Real technology logos from CDN
   const getTechLogo = (name) => {
+    // const logos = {
+    //   'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    //   'Vue.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+    //   'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    //   'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+    //   'Tailwind CSS': 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+    //   'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    //   'Express': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+    //   'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+    //   'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    //   'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+    //   'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    //   'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+    //   'iOS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
+    //   'Android': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg',
+    //   'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+    //   'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+    //   'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+    //   'Figma': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+    //   'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    //   'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
+    //   'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+    //   'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+    //   'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+    //   'Nginx': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg',
+    // }
     const logos = {
+      // Frontend
       'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      'Vue.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
-      'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+      'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      'Tailwind CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      'Tailwind CSS': 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+      'Bootstrap': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
+
+      // Backend
       'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
       'Express': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-      'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
       'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
       'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+      'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
+
+      // Mobile & Realtime
       'React Native': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      'Flutter': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
-      'iOS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
-      'Android': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg',
-      'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+      'Socket.io': 'https://www.vectorlogo.zone/logos/socketio/socketio-icon.svg',
+      'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+
+      // DevOps & Security
       'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-      'AWS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
-      'Figma': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+      'Nginx': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg',
+      'JWT': 'https://jwt.io/img/pic_logo.svg',
+      'OAuth 2.0': 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Oauth_logo.svg',
+      'PM2': 'https://cdn.worldvectorlogo.com/logos/pm2.svg',
     }
+    const skillCategories = [
+      {
+        title: 'Frontend',
+        icon: Code,
+        gradient: 'from-golden-green via-teal-gold to-gold',
+        bgGradient: 'from-golden-green/20 via-teal-gold/20 to-gold/20',
+        skills: [
+          { name: 'React', level: 90 },
+          { name: 'JavaScript', level: 92 },
+          { name: 'TypeScript', level: 80 },
+          { name: 'Tailwind CSS', level: 90 },
+          { name: 'Bootstrap', level: 85 },
+        ],
+      },
+      {
+        title: 'Backend',
+        icon: Database,
+        gradient: 'from-teal-gold via-gold to-golden-green',
+        bgGradient: 'from-teal-gold/20 via-gold/20 to-golden-green/20',
+        skills: [
+          { name: 'Node.js', level: 92 },
+          { name: 'Express', level: 90 },
+          { name: 'MongoDB', level: 88 },
+          { name: 'PostgreSQL', level: 80 },
+          { name: 'Redis', level: 85 },
+        ],
+      },
+      {
+        title: 'Mobile & Realtime',
+        icon: Smartphone,
+        gradient: 'from-golden-green via-gold to-holographic-green',
+        bgGradient: 'from-golden-green/20 via-gold/20 to-holographic-green/20',
+        skills: [
+          { name: 'React Native', level: 88 },
+          { name: 'Socket.io', level: 82 },
+          { name: 'Firebase', level: 80 },
+        ],
+      },
+      {
+        title: 'DevOps & Security',
+        icon: Cloud,
+        gradient: 'from-gold via-golden-green to-teal-gold',
+        bgGradient: 'from-gold/20 via-golden-green/20 to-teal-gold/20',
+        skills: [
+          { name: 'JWT', level: 90 },
+          { name: 'OAuth 2.0', level: 85 },
+          { name: 'Docker', level: 80 },
+          { name: 'Nginx', level: 85 },
+          { name: 'PM2', level: 88 },
+        ],
+      },
+    ]
     return logos[name] || null
   }
 
@@ -43,10 +128,10 @@ const Skills = () => {
       bgGradient: 'from-golden-green/20 via-teal-gold/20 to-gold/20',
       skills: [
         { name: 'React', level: 90 },
-        { name: 'Vue.js', level: 85 },
-        { name: 'Next.js', level: 88 },
+        { name: 'JavaScript', level: 92 },
         { name: 'TypeScript', level: 80 },
-        { name: 'Tailwind CSS', level: 95 },
+        { name: 'Tailwind CSS', level: 90 },
+        { name: 'Bootstrap', level: 85 },
       ],
     },
     {
@@ -55,35 +140,35 @@ const Skills = () => {
       gradient: 'from-teal-gold via-gold to-golden-green',
       bgGradient: 'from-teal-gold/20 via-gold/20 to-golden-green/20',
       skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Express', level: 85 },
-        { name: 'Python', level: 80 },
-        { name: 'MongoDB', level: 85 },
-        { name: 'PostgreSQL', level: 82 },
+        { name: 'Node.js', level: 92 },
+        { name: 'Express', level: 90 },
+        { name: 'MongoDB', level: 88 },
+        { name: 'PostgreSQL', level: 80 },
+        { name: 'Redis', level: 85 },
       ],
     },
     {
-      title: 'Mobile',
+      title: 'Mobile & Realtime',
       icon: Smartphone,
       gradient: 'from-golden-green via-gold to-holographic-green',
       bgGradient: 'from-golden-green/20 via-gold/20 to-holographic-green/20',
       skills: [
-        { name: 'React Native', level: 85 },
-        { name: 'Flutter', level: 75 },
-        { name: 'iOS', level: 70 },
-        { name: 'Android', level: 75 },
+        { name: 'React Native', level: 88 },
+        { name: 'Socket.io', level: 82 },
+        { name: 'Firebase', level: 80 },
       ],
     },
     {
-      title: 'Tools & Cloud',
+      title: 'DevOps & Security',
       icon: Cloud,
       gradient: 'from-gold via-golden-green to-teal-gold',
       bgGradient: 'from-gold/20 via-golden-green/20 to-teal-gold/20',
       skills: [
-        { name: 'Git', level: 90 },
+        { name: 'JWT', level: 90 },
+        { name: 'OAuth 2.0', level: 85 },
         { name: 'Docker', level: 80 },
-        { name: 'AWS', level: 75 },
-        { name: 'Figma', level: 88 },
+        { name: 'Nginx', level: 85 },
+        { name: 'PM2', level: 88 },
       ],
     },
   ]
@@ -180,7 +265,7 @@ const Skills = () => {
           </motion.div>
 
           {/* Category Selector Pills */}
-          <div 
+          <div
             className="flex flex-wrap justify-center gap-4 mb-12"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -197,11 +282,10 @@ const Skills = () => {
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 ${
-                    activeCategory === index
-                      ? `bg-gradient-to-r ${category.gradient} text-white shadow-neon-holographic`
-                      : 'glass text-golden-green hover:text-gold border border-golden-green/30 hover:border-gold/50'
-                  }`}
+                  className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-3 ${activeCategory === index
+                    ? `bg-gradient-to-r ${category.gradient} text-white shadow-neon-holographic`
+                    : 'glass text-golden-green hover:text-gold border border-golden-green/30 hover:border-gold/50'
+                    }`}
                 >
                   <IconComponent size={20} />
                   {category.title}
@@ -211,7 +295,7 @@ const Skills = () => {
           </div>
 
           {/* Carousel Container */}
-          <div 
+          <div
             className="relative"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
@@ -246,7 +330,7 @@ const Skills = () => {
                 {skillCategories.map((category, categoryIndex) => {
                   if (categoryIndex !== activeCategory) return null
                   const IconComponent = category.icon
-                  
+
                   return (
                     <motion.div
                       key={categoryIndex}
@@ -275,7 +359,7 @@ const Skills = () => {
                           ease: 'easeInOut',
                         }}
                       />
-                      
+
                       {/* Floating Particles */}
                       {[...Array(6)].map((_, i) => (
                         <motion.div
@@ -364,8 +448,8 @@ const Skills = () => {
                                         alt={skill.name}
                                         className="w-16 h-16 object-contain mx-auto"
                                         style={{
-                                          filter: hoveredSkill === `${categoryIndex}-${skillIndex}` 
-                                            ? 'drop-shadow(0 0 15px rgba(184, 233, 148, 0.9)) brightness(1.3)' 
+                                          filter: hoveredSkill === `${categoryIndex}-${skillIndex}`
+                                            ? 'drop-shadow(0 0 15px rgba(184, 233, 148, 0.9)) brightness(1.3)'
                                             : 'brightness(1)'
                                         }}
                                         onError={(e) => {
@@ -478,11 +562,10 @@ const Skills = () => {
                     setIsPaused(true)
                     setTimeout(() => setIsPaused(false), 5000) // Resume after 5 seconds
                   }}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    activeCategory === index
-                      ? 'w-8 bg-gradient-to-r from-golden-green via-teal-gold to-gold shadow-neon-golden-green'
-                      : 'w-2 bg-golden-green/30 hover:bg-golden-green/50'
-                  }`}
+                  className={`h-2 rounded-full transition-all duration-300 ${activeCategory === index
+                    ? 'w-8 bg-gradient-to-r from-golden-green via-teal-gold to-gold shadow-neon-golden-green'
+                    : 'w-2 bg-golden-green/30 hover:bg-golden-green/50'
+                    }`}
                   aria-label={`Go to ${skillCategories[index].title}`}
                 />
               ))}

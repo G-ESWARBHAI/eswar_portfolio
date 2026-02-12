@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Code, Coffee, Rocket, Heart } from 'lucide-react'
 import Tilt from 'react-parallax-tilt'
+import aboutImg from '../assets/about_img.png'
 
 const About = () => {
   const ref = useRef(null)
@@ -30,12 +31,14 @@ const About = () => {
     },
   }
 
+
   const interests = [
-    { icon: Code, title: 'Coding', description: 'Building amazing applications' },
-    { icon: Coffee, title: 'Coffee', description: 'Fuel for creativity' },
-    { icon: Rocket, title: 'Innovation', description: 'Exploring new technologies' },
-    { icon: Heart, title: 'Design', description: 'Creating beautiful UIs' },
+    { icon: Code, title: 'Backend Architecture', description: 'Scalable API & system design' },
+    { icon: Rocket, title: 'Production Deployment', description: 'VPS, Nginx, PM2, SSL' },
+    { icon: Coffee, title: 'Performance Optimization', description: 'Redis caching & DB tuning' },
+    { icon: Heart, title: 'Mobile Development', description: 'React Native CLI apps' },
   ]
+
 
   return (
     <section
@@ -79,17 +82,22 @@ const About = () => {
                 className="relative"
               >
                 <div className="glass-holographic rounded-3xl p-6 md:p-8 border border-golden-green/40 shadow-neon-holographic">
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-golden-green/30 via-teal-gold/30 to-gold/20 flex items-center justify-center mb-6">
-                    <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-golden-green to-teal-gold rounded-full flex items-center justify-center shadow-neon-holographic">
-                      <span className="text-5xl md:text-7xl">👨‍💻</span>
-                    </div>
+                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-golden-green/30 via-teal-gold/30 to-gold/20 flex items-center justify-center mb-6 overflow-hidden">
+                    <img
+                      src={aboutImg}
+                      alt="Profile"
+                      className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                   <div className="space-y-4">
                     <h3 className="text-xl md:text-2xl font-bold text-gradient">Full Stack Developer</h3>
                     <p className="text-sm md:text-base text-golden-green/90 leading-relaxed">
-                      I'm a passionate developer with expertise in building scalable
-                      web applications. I love turning complex problems into simple,
-                      beautiful, and intuitive solutions.
+                      I'm a Full Stack Developer with a strong focus on backend systems
+                      and scalable architecture. I specialize in building secure APIs,
+                      optimizing databases, and deploying production-ready applications.
+
+                      Currently working at Yes Lorvens Solutions, I design and maintain
+                      real-world web and mobile applications used in production.
                     </p>
                   </div>
                 </div>
@@ -101,16 +109,21 @@ const About = () => {
               <div className="glass rounded-2xl p-6 border border-golden-green/30">
                 <h3 className="text-xl font-bold text-gradient mb-4">My Journey</h3>
                 <p className="text-sm md:text-base text-golden-green/80 leading-relaxed mb-4">
-                  With over 3 years of experience in web development, I've worked
-                  on various projects ranging from small business websites to
-                  large-scale enterprise applications. My passion lies in creating
-                  user-friendly interfaces and robust backend systems.
+                  I completed my B.Tech in Computer Science from RGUKT Srikakulam
+                  with a strong foundation in data structures, system design,
+                  and backend engineering.
+
+                  My professional journey started as a Full Stack Developer at
+                  Yes Lorvens Solutions, where I build scalable backend systems
+                  using Node.js, Express.js, MongoDB, and Redis.
+
+                  I have developed secure authentication systems, integrated payment
+                  gateways, implemented caching strategies, and deployed applications
+                  on VPS infrastructure using Nginx and PM2.
                 </p>
                 <p className="text-sm md:text-base text-golden-green/80 leading-relaxed">
-                  I'm constantly learning new technologies and best practices to
-                  stay ahead in this ever-evolving field. When I'm not coding,
-                  you can find me exploring new frameworks, contributing to open
-                  source, or sharing knowledge with the developer community.
+                  My focus is always on performance, clean architecture,
+                  and writing maintainable production-level code.
                 </p>
               </div>
 
